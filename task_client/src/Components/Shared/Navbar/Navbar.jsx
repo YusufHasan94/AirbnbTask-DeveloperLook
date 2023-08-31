@@ -14,7 +14,7 @@ const Navbar = () => {
             <ul className="w-3/4 flex justify-center gap-10">
                 {
                     menu.map(item=> (
-                        <li key={item.id} className="flex flex-col items-center opacity-60 hover:border-b-4 hover:opacity-100 border-black">
+                        <li key={item.id} className="flex flex-col items-center opacity-60 border-b-4 border-opacity-0 hover:border-opacity-100 hover:opacity-100 border-black">
                             <img src={item.menu_icon} className="w-8" alt="menuIcon" />
                             <span className="font-semibold">{item.menu_item}</span>
                         </li>

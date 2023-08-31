@@ -1,31 +1,30 @@
 [
     {
     "id": 1,
-    "menu_icon": "https://a0.muscache.com/pictures/7630c83f-96a8-4232-9a10-0398661e2e6f.jpg",
-    "menu_item": "Rooms"
-    },
-    {
-    "id": 2,
     "menu_icon": "https://a0.muscache.com/pictures/ee9e2a40-ffac-4db9-9080-b351efc3cfc4.jpg",
     "menu_item": "Tropical"
     },
     {
-    "id": 3,
+    "id": 2,
     "menu_icon": "https://a0.muscache.com/pictures/732edad8-3ae0-49a8-a451-29a8010dcc0c.jpg",
     "menu_item": "Cabins"
     },
     {
-    "id": 4,
+    "id": 3,
     "menu_icon": "https://a0.muscache.com/pictures/10ce1091-c854-40f3-a2fb-defc2995bcaf.jpg",
     "menu_item": "Beach"
     },
     {
-    "id": 5,
+    "id": 4,
     "menu_icon": "https://a0.muscache.com/pictures/ed8b9e47-609b-44c2-9768-33e6a22eccb2.jpg",
     "menu_item": "Iconic cities"
     },{
-    "id": 6,
+    "id": 5,
     "menu_icon": "https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg",
     "menu_item": "Amazing views"
+    },{
+    "id": 6,
+    "menu_icon": "https://a0.muscache.com/pictures/6ad4bd95-f086-437d-97e3-14d12155ddfe.jpg",
+    "menu_item": "Countryside"
     }
 ]
