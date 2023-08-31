@@ -1,16 +1,24 @@
 import { useEffect, useState } from "react";
 import { PiSlidersHorizontal } from "react-icons/pi";
+import Modal from "../../Modal/Modal";
 
 const Navbar = () => {
     const [menu, setMenu] = useState([]);
+    const [isOpen, setIsOpen] = useState(false);
     useEffect(()=>{
         fetch('/public/menu.json')
         .then(res=> res.json())
         .then(data => setMenu(data))
-    },[])
+    },[]);
+    const openModal =()=>{
+        setIsOpen(true);
+    }
+    const closeModal =()=>{
+        setIsOpen(false);
+    }
 
     return (
-        <div className="p-10 flex justify-between">
+        <div className="p-10 flex justify-between relative">
             <ul className="w-3/4 flex justify-center gap-10">
                 {
                     menu.map(item=> (
@@ -22,10 +30,14 @@ const Navbar = () => {
                 }
             </ul>
 
-            <button className="text-xl flex items-center gap-3 border-2 px-4 rounded-2xl border-gray-200">
+            <button className="text-xl flex items-center gap-3 border-2 px-4 rounded-2xl border-gray-200" onClick={openModal}>
                 <PiSlidersHorizontal className=""/>
                 <span>Filter</span>
             </button>
+
+            <Modal isOpen={isOpen} onClose={closeModal} className="absolute bottom-0">
+
+            </Modal>
         </div>
     );
 };
