@@ -9,7 +9,7 @@ const CategoryItems = () => {
     const [modalCondition, setModalCondition] = useState(false);
 
     useEffect(() => {
-        fetch('/public/menu.json')
+        fetch('/menu.json')
             .then(res => res.json())
             .then(data => setCategoryItems(data))
     }, [])
