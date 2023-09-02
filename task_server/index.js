@@ -25,21 +25,23 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     // await client.connect();
     // Send a ping to confirm a successful connection
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    const database = client.db('developerLook');
+    const places = database.collection('touringPlaces');
     
+    app.get("/places", async(req, res)=>{
+        const category = req.query.category;
+        const query = {category:category};
+        const result = await places.find().toArray();
+        res.send(result);
+    });
+    
+    app.get("/places/:category", async(req, res)=>{
+        const category = req.params.category;
+        const query = {category:category};
+        const result = await places.find(query).toArray();
+        res.send(result);
+    })
+
     await client.db("admin").command({ ping: 1 });
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
