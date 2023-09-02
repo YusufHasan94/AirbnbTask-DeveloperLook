@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Main from './Components/Main/Main/Main.jsx';
 import CategoryView from './Components/Main/CategoryView/Categoryview.jsx';
+import NotFound from './Components/NotFound/NotFound.jsx';
 
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: "*",
+    element: <NotFound></NotFound>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
