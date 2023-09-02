@@ -7,6 +7,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Main from './Components/Main/Main/Main.jsx';
+import CategoryView from './Components/Main/CategoryView/Categoryview.jsx';
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Main></Main>        
+      },{
+        path: "/places/:category",
+        element: <CategoryView></CategoryView>,
+        loader: ({params})=> fetch(`http://localhost:5000/places/${params.category}`)        
       }
     ]
   },

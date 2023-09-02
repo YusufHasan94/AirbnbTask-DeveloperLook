@@ -6,8 +6,8 @@ import TopNavbar from './Components/Header/TopNavBar/TopNavBar/TopNavbar';
 function App() {
   return (
     <>
-     <TopNavbar></TopNavbar>
-     <Outlet></Outlet>
+      <TopNavbar></TopNavbar>
+      <Outlet></Outlet>
     </>
   )
 }
