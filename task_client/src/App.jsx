@@ -1,13 +1,11 @@
-import { Outlet } from 'react-router-dom';
 import './App.css';
-import Header from './Components/Header/Header';
+import TopNavbar from './Components/Header/TopNavBar/TopNavBar/TopNavbar';
+
 
 function App() {
-
   return (
     <>
-      <Header></Header>
-      <Outlet></Outlet>
+     <TopNavbar></TopNavbar>
     </>
   )
 }
