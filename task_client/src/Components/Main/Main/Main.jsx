@@ -6,7 +6,7 @@ const Main = () => {
     const[places, setPlaces] = useState([]);
     const [loader, setLoader] = useState(true);
     useEffect(()=>{
-        fetch('http://localhost:5000/places')
+        fetch('https://task-server-one-theta.vercel.app/places')
         .then(res=> res.json())
         .then(data=> {
                 setPlaces(data);

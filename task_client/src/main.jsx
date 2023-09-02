@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       },{
         path: "/places/:category",
         element: <CategoryView></CategoryView>,
-        loader: ({params})=> fetch(`http://localhost:5000/places/${params.category}`)        
+        loader: ({params})=> fetch(`https://task-server-one-theta.vercel.app/places/${params.category}`)        
       }
     ]
   },
