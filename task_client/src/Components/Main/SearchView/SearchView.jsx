@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 import { FaHeart, FaStar } from 'react-icons/fa6';
 import { useLoaderData, useParams } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 
 const SearchView = () => {
     const [sortedLocation, setSortedLocation] = useState([]); 
@@ -17,10 +21,25 @@ const SearchView = () => {
             {
                 sortedLocation.map(place=>(
                     <div className="card" key={place._id}>
-                        <div className="relative">
-                            <img src={place.image[0]} className="h-64 w-full rounded-xl" alt="" />
-                            <FaHeart className="absolute top-5 right-5 text-xl opacity-60"/>
-                        </div>
+                        <Swiper
+                            pagination={{
+                                dynamicBullets: true,
+                            }}
+                            modules={[Pagination]}
+                            className="mySwiper"
+                        >
+                            {
+                                place.image.map((i, index) => (
+                                    <SwiperSlide key={index}>
+                                        <div className="relative">
+                                            <img src={i} className="h-64 w-full rounded-xl" alt="" />
+                                            <FaHeart className="absolute top-5 right-5 text-xl opacity-60" />
+                                        </div>
+                                    </SwiperSlide>
+                                ))
+                            }
+
+                        </Swiper>
                         <div className="px-1 mt-3">
                             <div className="flex justify-between">
                                 <h1 className="font-semibold">{place.location}</h1>

@@ -28,11 +28,11 @@ const router = createBrowserRouter([
       },{
         path: "/filterPlaces/:price",
         element: <FilterView></FilterView>,
-        loader: ({params})=> fetch(`http://localhost:5000/filterPlaces?price=${params.price}`)
+        loader: ({params})=> fetch(`https://task-server-one-theta.vercel.app/filterPlaces?price=${params.price}`)
       },{
         path: "/locations/:location",
         element: <SearchView></SearchView>,
-        loader: ({params})=> fetch(`http://localhost:5000/places`)
+        loader: ({params})=> fetch(`https://task-server-one-theta.vercel.app/places`)
 
       }
 

@@ -1,5 +1,9 @@
 import { FaHeart, FaStar } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import { Pagination } from 'swiper/modules';
 
 const CategoryView = () => {
     const filteredPlace = useLoaderData();
@@ -9,10 +13,25 @@ const CategoryView = () => {
             {
                 filteredPlace.slice(0,20).map(place=>(
                     <div className="card" key={place._id}>
-                        <div className="relative">
-                            <img src={place.image[0]} className="h-64 w-full rounded-xl" alt="" />
-                            <FaHeart className="absolute top-5 right-5 text-xl opacity-60"/>
-                        </div>
+                        <Swiper
+                            pagination={{
+                                dynamicBullets: true,
+                            }}
+                            modules={[Pagination]}
+                            className="mySwiper"
+                        >
+                            {
+                                place.image.map((i, index) => (
+                                    <SwiperSlide key={index}>
+                                        <div className="relative">
+                                            <img src={i} className="h-64 w-full rounded-xl" alt="" />
+                                            <FaHeart className="absolute top-5 right-5 text-xl opacity-60" />
+                                        </div>
+                                    </SwiperSlide>
+                                ))
+                            }
+
+                        </Swiper>
                         <div className="px-1 mt-3">
                             <div className="flex justify-between">
                                 <h1 className="font-semibold">{place.location}</h1>

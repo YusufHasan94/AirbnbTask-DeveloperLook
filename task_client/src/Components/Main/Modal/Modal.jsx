@@ -62,7 +62,7 @@ const Modal = ({ handleModal }) => {
     const buttonLabels = Array.from({ length: 8 }, (_, index) => `${index + 1}`)
 
     const handlePlaceType = async (price) => {
-        const res = await fetch(`http://localhost:5000/filterPlaces?price=${price}`);
+        const res = await fetch(`https://task-server-one-theta.vercel.app/filterPlaces?price=${price}`);
         const data = await res.json();
         setfilteredPriceData(data);
         setBtnClicked(price);
@@ -71,7 +71,7 @@ const Modal = ({ handleModal }) => {
     }
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/price-range?minPrice=${values[0]}&maxPrice=${values[1]}`)
+        fetch(`https://task-server-one-theta.vercel.app/price-range?minPrice=${values[0]}&maxPrice=${values[1]}`)
         .then(res => res.json())
         .then(data => setBetweenRange(data));
 
@@ -222,7 +222,7 @@ const Modal = ({ handleModal }) => {
             <footer className="flex justify-between mx-10">
                 <button className="font-semibold">Clear All</button>
                 <Link to={`/filterPlaces/${filteredPrice}`}>
-                    <button className="bg-black text-white font-semibold px-10 py-2 rounded-xl" >Show {filteredPriceData.length} places</button>
+                    <button className="bg-black text-white font-semibold px-10 py-2 rounded-xl" onClick={handleModal} >Show {filteredPriceData.length} places</button>
                 </Link>
             </footer>
         </div>
