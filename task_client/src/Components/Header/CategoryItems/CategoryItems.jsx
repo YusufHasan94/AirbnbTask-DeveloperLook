@@ -38,7 +38,7 @@ const CategoryItems = () => {
             {
                 modalCondition ?
                     <div className="absolute top-0 left-0 md:top-20 md:left-60 flex items-center">
-                        <Modal handleModal={handleModal}></Modal>
+                        <Modal handleModal={handleModal} ></Modal>
                     </div> : ''
             }
 

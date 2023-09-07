@@ -5,6 +5,10 @@
 .modalDesign main{
     height: 580px;
 }
+.slider{
+    
+}
+
 @media screen and (max-width: 576px) {
     .modalDesign{
         height: auto;

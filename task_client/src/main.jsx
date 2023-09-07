@@ -9,6 +9,8 @@ import {
 import Main from './Components/Main/Main/Main.jsx';
 import CategoryView from './Components/Main/CategoryView/Categoryview.jsx';
 import NotFound from './Components/NotFound/NotFound.jsx';
+import FilterView from './Components/Main/FilterView/FilterView.jsx';
+import SearchView from './Components/Main/SearchView/SearchView.jsx';
 
 
 const router = createBrowserRouter([
@@ -23,7 +25,17 @@ const router = createBrowserRouter([
         path: "/places/:category",
         element: <CategoryView></CategoryView>,
         loader: ({params})=> fetch(`https://task-server-one-theta.vercel.app/places/${params.category}`)        
+      },{
+        path: "/filterPlaces/:price",
+        element: <FilterView></FilterView>,
+        loader: ({params})=> fetch(`http://localhost:5000/filterPlaces?price=${params.price}`)
+      },{
+        path: "/locations/:location",
+        element: <SearchView></SearchView>,
+        loader: ({params})=> fetch(`http://localhost:5000/places`)
+
       }
+
     ]
   },
   {
